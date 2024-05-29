@@ -26,7 +26,7 @@ export default {
       axios
         .request(options)
         .then((response)=> {
-          this.store = response.data.results;
+          this.store.searchFilm = response.data.results;
         })
         .catch(function (error) {
           console.error(error);
@@ -58,7 +58,7 @@ export default {
     <button @click="searchMovie()">Submit</button>
   </div>
 
-  <div class="movie" v-for="element in store">
+  <div class="movie" v-for="element in store.searchFilm" v-show="store.searchFilm!=[]">
     titolo: {{ element.title }} <br>
     titolo originale: {{ element.original_title }} <br>
     lingua originale: {{ element.original_language }} <br>
