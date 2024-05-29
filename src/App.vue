@@ -68,14 +68,12 @@ export default {
 <template>
 
   <div class="searchbar">
-    <input type="text" v-model="searchText">
+    <input type="text" v-model="searchText" @keyup.enter="search()">
     <button @click="search()">Submit</button>
   </div>
 
   <Movies />
   <Tv />
-
-  <pre>{{ store.searchTv }}</pre>
 
 </template>
 
