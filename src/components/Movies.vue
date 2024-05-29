@@ -15,29 +15,36 @@ export default {
 
         <div class="movie" v-for="element in store.searchFilm" v-show="store.searchFilm != []">
             <img :src="`https://image.tmdb.org/t/p/original${element.backdrop_path}`" alt=""> <br>
-            titolo: {{ element.title }} <br>
-            titolo originale: {{ element.original_title }} <br>
-            lingua originale: {{ element.original_language }} <br>
-            voto: {{ Math.ceil(element.vote_average) }}
+            {{ element.title }} <br>
+            {{ element.original_title }} <br>
+            {{ element.original_language().toUpperCase() }} <br>
+            <i class="fa-solid fa-star" v-for="element in Math.ceil(element.vote_average / 2)"></i><i
+                class="fa-regular fa-star" v-for="element in (5 - Math.ceil(element.vote_average / 2))"></i>
+            <!-- voto: {{ Math.ceil(element.vote_average / 2) }} -->
         </div>
 
     </div>
 </template>
 
 <style scoped>
-h1{
-    margin:3rem 0;
+h1 {
+    margin: 3rem 0;
 }
+
 .movie {
     margin-bottom: 3rem;
-    width:19%;
+    width: 19%;
+    background-color: aliceblue;
+    color: black;
 }
-img{
-    width:10rem;
+
+img {
+    width: 100%;
 }
-.my_display_flex{
+
+.my_display_flex {
     display: flex;
     flex-flow: wrap row;
-    gap:calc(5% / 4);
+    gap: calc(5% / 4);
 }
 </style>

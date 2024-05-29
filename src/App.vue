@@ -11,7 +11,7 @@ export default {
   data() {
     return {
       store,
-      searchText: ""
+      searchText: "avengers"
     }
   },
   methods: {
