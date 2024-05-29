@@ -3,11 +3,11 @@ import store from "./data/store.js"
 export default{
   data(){
     return{
-      data
+      store
     }
   },
   methods:{
-    
+
   },
   created(){
 
@@ -15,7 +15,13 @@ export default{
 }
 </script>
 
-<template></template>
+<template>
+  <div class="searchbar">
+    <input type="text">
+    <button>Submit</button>
+  </div>
+  <pre></pre>
+</template>
 
 <style scoped>
 </style>
