@@ -30,7 +30,8 @@ export default {
 
 <style scoped>
 h1 {
-    margin: 3rem 0;
+    margin-bottom:3rem;
+    padding-top:12rem;  
 }
 
 .movie {

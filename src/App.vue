@@ -21,11 +21,13 @@ export default {
 </script>
 
 <template>
-
+  
   <AppHeader />
 
   <Movies />
   <Tv />
+
+
 
 </template>
 

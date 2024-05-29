@@ -36,7 +36,6 @@ export default {
                 .request(movie)
                 .then((response) => {
                     this.store.searchFilm = response.data.results;
-                    console.log(response.data.results);
                 })
                 .catch(function (error) {
                     console.error(error);
@@ -45,7 +44,6 @@ export default {
                 .request(tv)
                 .then((response) => {
                     this.store.searchTv = response.data.results;
-                    console.log(response.data.results);
                 })
                 .catch(function (error) {
                     console.error(error);
@@ -59,7 +57,7 @@ export default {
 
     <header>
         <div class="logo">
-            <H1>BOOLFLIX</H1>
+            <h1>BOOLFLIX</h1>
         </div>
         <div class="searchbar">
             <input type="text" v-model="store.searchText" :input="search()" placeholder="Cerca">
@@ -73,7 +71,9 @@ export default {
     color:red;
 }
 header{
+    position:fixed;
     display:flex;
+    width:100%;
     padding:3rem;
     background-color: black;
     justify-content: space-between;
