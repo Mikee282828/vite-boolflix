@@ -1,7 +1,13 @@
 <script>
 import store from "./data/store.js";
 import axios from 'axios';
+import Movies from "./components/Movies.vue";
+import Tv from "./components/Tv.vue";
 export default {
+  components:{
+    Movies,
+    Tv
+  },
   data() {
     return {
       store,
@@ -56,19 +62,6 @@ export default {
   }
 }
 </script>
-
-<!-- "id": 19603,
-"original_language": "en",
-"original_title": "Ciao",
-"overview": "A man learns that his late friend had a secret online lover who is on the way from Italy.",
-"popularity": 6.625,
-"poster_path": "/fvgR62s7bJizAS8xnGZCHmZrPbw.jpg",
-"release_date": "2008-12-05",
-"title": "Ciao",
-"video": false,
-"vote_average": 5.7,
-"vote_count": 38 -->
-
 <!-- https://image.tmdb.org/t/p/original/Ag6qhzsJd3k1NKuNrG9RmhZDMh7.jpg -->
 
 <template>
@@ -77,29 +70,13 @@ export default {
     <input type="text" v-model="searchText">
     <button @click="search()">Submit</button>
   </div>
-
-  <h2>MOVIES</h2>
-  <div class="movie" v-for="element in store.searchFilm" v-show="store.searchFilm != []">
-    titolo: {{ element.title }} <br>
-    titolo originale: {{ element.original_title }} <br>
-    lingua originale: {{ element.original_language }} <br>
-    voto: {{ element.vote_average }}
-  </div>
-
-  <h2>TV SERIES</h2>
-  <div class="movie" v-for="element in store.searchTv" v-show="store.searchTv != []">
-    titolo: {{ element.name }} <br>
-    titolo originale: {{ element.original_name }} <br>
-    lingua originale: {{ element.original_language }} <br>
-    voto: {{ element.vote_average }}
-  </div>
+  
+  <Movies />
+  <Tv />
 
   <pre>{{ store.searchTv }}</pre>
 
 </template>
 
 <style scoped>
-.movie {
-  margin-bottom: 3rem;
-}
 </style>
