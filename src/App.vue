@@ -4,7 +4,7 @@ import axios from 'axios';
 import Movies from "./components/Movies.vue";
 import Tv from "./components/Tv.vue";
 export default {
-  components:{
+  components: {
     Movies,
     Tv
   },
@@ -43,6 +43,7 @@ export default {
         .request(movie)
         .then((response) => {
           this.store.searchFilm = response.data.results;
+          console.log(response.data.results);
         })
         .catch(function (error) {
           console.error(error);
@@ -51,6 +52,7 @@ export default {
         .request(tv)
         .then((response) => {
           this.store.searchTv = response.data.results;
+          console.log(response.data.results);
         })
         .catch(function (error) {
           console.error(error);
@@ -62,7 +64,6 @@ export default {
   }
 }
 </script>
-<!-- https://image.tmdb.org/t/p/original/Ag6qhzsJd3k1NKuNrG9RmhZDMh7.jpg -->
 
 <template>
 
@@ -70,7 +71,7 @@ export default {
     <input type="text" v-model="searchText">
     <button @click="search()">Submit</button>
   </div>
-  
+
   <Movies />
   <Tv />
 
@@ -78,5 +79,4 @@ export default {
 
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
