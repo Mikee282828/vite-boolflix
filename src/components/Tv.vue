@@ -6,6 +6,15 @@ export default {
         originalName: String,
         vote: Number,
         overview: String
+    },
+    methods: {
+        overviewEllipsator() {
+            if (this.overview.length > 370) {
+                return this.overview.slice(0, 370) + "...";
+            } else {
+                return this.overview;
+            }
+        }
     }
 }
 </script>
@@ -20,11 +29,23 @@ export default {
         </div>
 
         <div class="info">
-            <strong>Titolo:</strong>{{ name }} <br>
-            <strong>Titolo originale:</strong>{{ originalName }} <br>
-            <strong>Voto:</strong><i class="fa-solid fa-star" v-for="element in Math.ceil(vote / 2)"></i><i
-                class="fa-regular fa-star" v-for="element in (5 - Math.ceil(vote / 2))"></i> <br>
-            <strong>Overview: </strong>{{ overview }}
+
+            <div class="title">
+                <strong>Titolo: </strong>{{ name }}
+            </div>
+
+            <div class="original_title">
+                <strong>Titolo originale: </strong>{{ originalName }}
+            </div>
+
+            <div class="rating">
+                <strong>Voto: </strong><i class="fa-solid fa-star" v-for="element in Math.ceil(vote / 2)"></i><i
+                    class="fa-regular fa-star" v-for="element in (5 - Math.ceil(vote / 2))"></i>
+            </div>
+            <div class="overview">
+                <strong>Overview: </strong>{{ overviewEllipsator() }}
+            </div>
+            
         </div>
     </div>
 
@@ -46,10 +67,12 @@ img {
     flex-flow: wrap row;
     gap: calc(5% / 4);
 }
-.tv:hover .poster{
-    opacity:0;
+
+.tv:hover .poster {
+    opacity: 0;
 }
-.tv:hover .info{
-    opacity:1;
+
+.tv:hover .info {
+    opacity: 1;
 }
 </style>
