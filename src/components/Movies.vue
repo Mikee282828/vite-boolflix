@@ -41,4 +41,10 @@ img {
     height: 100%;
     object-fit: cover;
 }
+.movie:hover .poster{
+    opacity:0;
+}
+.movie:hover .info{
+    opacity:1;
+}
 </style>

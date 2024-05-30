@@ -13,9 +13,6 @@ export default {
     return {
       store,
     }
-  },
-  created() {
-
   }
 }
 </script>

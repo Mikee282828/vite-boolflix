@@ -46,4 +46,10 @@ img {
     flex-flow: wrap row;
     gap: calc(5% / 4);
 }
+.tv:hover .poster{
+    opacity:0;
+}
+.tv:hover .info{
+    opacity:1;
+}
 </style>
