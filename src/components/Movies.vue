@@ -1,53 +1,44 @@
 <script>
-import store from "../data/store.js";
+
 export default {
-    data() {
-        return {
-            store
-        }
+    props: {
+        poster: String,
+        title: String,
+        originalTitle: String,
+        vote: Number,
+        overview: String
     }
 }
 </script>
 
 <template>
-    <div class="container" v-show="store.searchText != ''">
-        <h1>MOVIES</h1>
-        <div class="my_display_flex">
 
-            <div class="movie" v-for="element in store.searchFilm">
-                <img :src="`https://image.tmdb.org/t/p/w342${element.poster_path}`" alt=""> <br>
-                {{ element.title }} <br>
-                {{ element.original_title }} <br>
-                {{ element.original_language.toUpperCase() }} <br>
-                <i class="fa-solid fa-star" v-for="element in Math.ceil(element.vote_average / 2)"></i><i
-                    class="fa-regular fa-star" v-for="element in (5 - Math.ceil(element.vote_average / 2))"></i>
-                <!-- voto: {{ Math.ceil(element.vote_average / 2) }} -->
-            </div>
+    <div class="movie">
 
+        <div class="poster">
+            <img :src="`https://image.tmdb.org/t/p/w342${poster}`" alt="poster" v-if="poster != null">
+            <h3 v-else class="altPoster">{{ title }}</h3>
+        </div>
+
+        <div class="info">
+            <strong>Titolo: </strong>{{ title }} <br>
+            <strong>Titolo originale: </strong>{{ originalTitle }} <br>
+            <strong>Voto: </strong><i class="fa-solid fa-star" v-for="element in Math.ceil(vote / 2)"></i><i
+                class="fa-regular fa-star" v-for="element in (5 - Math.ceil(vote / 2))"></i> <br>
+            <strong>Overview: </strong>{{ overview }}
         </div>
     </div>
+
 </template>
 
 <style scoped>
-h1 {
-    margin-bottom:3rem;
-    padding-top:12rem;  
-}
-
-.movie {
-    margin-bottom: 3rem;
-    width: 19%;
-    background-color: aliceblue;
-    color: black;
+i {
+    color: #FFBD01;
 }
 
 img {
     width: 100%;
-}
-
-.my_display_flex {
-    display: flex;
-    flex-flow: wrap row;
-    gap: calc(5% / 4);
+    height: 100%;
+    object-fit: cover;
 }
 </style>

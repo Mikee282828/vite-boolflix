@@ -77,6 +77,7 @@ header{
     padding:3rem;
     background-color: black;
     justify-content: space-between;
+    z-index: 999;
 }
 .searchbar{
     font-size: 2rem;
