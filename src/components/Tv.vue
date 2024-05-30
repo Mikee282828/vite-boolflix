@@ -9,8 +9,12 @@ export default {
     },
     methods: {
         overviewEllipsator() {
-            if (this.overview.length > 370) {
-                return this.overview.slice(0, 370) + "...";
+            if (this.overview.length > 380) {
+                let i = 379;
+                while(this.overview[i]!= " "){
+                    i--;
+                }
+                return this.overview.slice(0, i) + "...";
             } else {
                 return this.overview;
             }
