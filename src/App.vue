@@ -43,6 +43,10 @@ export default {
   flex-flow: wrap row;
   gap: calc(5% / 4);
 }
+.container{
+  width:1337px;
+  margin:0 auto;
+}
 
 .moviesHeader {
   margin-bottom: 3rem;
