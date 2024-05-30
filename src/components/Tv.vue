@@ -16,7 +16,7 @@ export default {
         <div class="my_display_flex">
 
             <div class="tv" v-for="element in store.searchTv" v-show="store.searchTv != []">
-                <img :src="`https://image.tmdb.org/t/p/original${element.backdrop_path}`" alt=""> <br>
+                <img :src="`https://image.tmdb.org/t/p/w342${element.poster_path}`" alt=""> <br>
                 {{ element.name }} <br>
                 {{ element.original_name }} <br>
                 {{ element.original_language.toUpperCase() }} <br>
