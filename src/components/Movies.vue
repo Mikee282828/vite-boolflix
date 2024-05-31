@@ -1,6 +1,7 @@
 <script>
 
 export default {
+    name: "Movies",
     props: {
         poster: String,
         title: String,

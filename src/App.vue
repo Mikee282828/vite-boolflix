@@ -4,6 +4,7 @@ import Movies from "./components/Movies.vue";
 import Tv from "./components/Tv.vue";
 import AppHeader from "./components/AppHeader.vue";
 export default {
+  name:"App",
   components: {
     Movies,
     Tv,

@@ -1,5 +1,6 @@
 <script>
 export default {
+    name: "Tv",
     props: {
         poster: String,
         name: String,
